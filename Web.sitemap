@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="Home.aspx" title="Home"  description="">
+    <siteMapNode url="Category.aspx" title="Games List"/>
+    <siteMapNode url="GameDetail.aspx" title="Game" />
+    <siteMapNode url="CartPage.Aspx" title="Cart" />
+    <siteMapNode url="ContactUs.aspx" title="Contact Us"/>
+    <siteMapNode url="Aboutus.Aspx" title="About Us" />
+    <siteMapNode url="Admin.aspx" title="Game Management"/>
+    <siteMapNode url="LatestTweets.aspx" title="Tweets"/>
+    <siteMapNode url="Login.aspx" title="Login"/>
+    <siteMapNode url="ViewProfile.aspx" title="Login"/>
+  </siteMapNode>
+</siteMap>

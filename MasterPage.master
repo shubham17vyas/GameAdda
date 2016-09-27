@@ -1,0 +1,153 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <style type="text/css">
+
+        #header 
+        {
+            margin:0px;
+        }
+            #header ul li a
+            {
+                color:#fff;
+                text-decoration:none;
+                background:#000;
+                display:block;
+                padding:10px;
+            }
+    </style>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    
+	<meta charset="UTF-8"/>
+	<title>Game Adda</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css"/>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        
+         <div class="background">
+		<div class="page">
+			<div class="header">
+				<a href="Home.aspx" id="logo"><img src="images/logo1.JPG" alt="logo"/></a>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <ul>
+					<li>
+                        <asp:HyperLink ID="HyperLink2" NavigateUrl="Category.aspx?Game_Cate=XBOX 360" runat="server">XBox</asp:HyperLink>                      
+					</li>                    
+				    <li>
+                        <asp:HyperLink ID="HyperLink3" NavigateUrl="Category.aspx?Game_Cate=PS3" runat="server">PS3</asp:HyperLink>
+					</li>
+					<li>
+                        <asp:HyperLink ID="HyperLink4" NavigateUrl="Category.aspx?Game_Cate=PS4" runat="server">PS4</asp:HyperLink>
+						
+					</li>
+					<li>
+                        <asp:HyperLink ID="HyperLink5" NavigateUrl="Category.aspx?Game_Cate=PC" runat="server">PC</asp:HyperLink>				
+					</li>					
+                    <li>
+                        <asp:LoginStatus ID="LoginStatus1" runat="server" />
+					</li>
+                     <li>
+                         <asp:HyperLink ID="HyperLink1" NavigateUrl="Admin.aspx" Visible="false" runat="server">Admin</asp:HyperLink>
+					</li>
+                     <li>
+                         <asp:HyperLink ID="HyperLink8" NavigateUrl="ViewProfile.aspx" Visible="false" runat="server">Profile</asp:HyperLink>
+					</li>
+				</ul>
+			&nbsp;</div>
+
+              <div class="body home">
+            <div class="sidebar">
+					<div class="news">
+						<span>Navigation</span>
+						<ul>
+							<li>
+								<asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Bold="true" ForeColor="White"> </asp:SiteMapPath>
+							</li>
+							
+						</ul>						
+					</div>
+					<div class="section">
+						<span>Upcoming Games</span>
+						<ul>
+							<li>
+								<a>Final Fantasy XIV</a> <span>Jun 23, 2015</span>
+							</li>
+							<li>
+								<a>Borderlands 5</a> <span>June 27, 2015</span>
+							</li>
+							<li>
+								<a>Ride</a> <span> August 23, 2015</span>
+							</li>
+							<li>
+								<a>The Evil Within</a> <span>August 25, 2015</span>
+							</li>
+							<li>
+								<a >Devil May Cry</a> <span>August 28, 2015</span>
+							</li>
+						</ul>
+					</div>
+					<div>
+                        <asp:HyperLink ID="HyperLink7" runat="server"  NavigateUrl="~/LatestTweets.aspx" Width="219px"><span>Latest Tweets</span></asp:HyperLink>
+						<ul>
+
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Database %>" SelectCommand="SELECT [Tweet] FROM [Tweets] ORDER BY [TweetId] DESC"></asp:SqlDataSource>
+
+                            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Width="219px">
+                                <Columns>
+                                    <asp:BoundField DataField="Tweet" HeaderText="" SortExpression="Tweet"  ItemStyle-ForeColor="White" />
+                                </Columns>
+                            </asp:GridView>
+
+						</ul>
+						</div>
+				</div>
+            <div class="center">
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+       
+        </asp:ContentPlaceHolder>
+                </div>
+                  </div>
+            
+			
+			<div class="footer">
+				<div>
+					<ul>
+						<li class="selected">
+							<a href="Home.aspx">Home</a>|
+						</li>
+						<li>
+							<a href="Category.aspx?Game_Cate=XBOX 360">X Box</a>|
+						</li>
+						<li>
+							<a href="Category.aspx?Game_Cate=PS3">PS3</a>|
+						</li>
+						<li>
+							<a href="Category.aspx?Game_Cate=PS4">PS4</a>|
+						</li>
+						<li>
+							<a href="Category.aspx?Game_Cate=PC">PC</a>|
+						</li>
+						<li>
+                        <asp:HyperLink ID="HyperLink6" NavigateUrl="Aboutus.aspx" runat="server">About</asp:HyperLink>
+					</li>
+					</ul>
+					<p>
+						&#169; GAME ADDA 2023. All Rights Reserved
+					</p>
+				</div>
+				<div class="connect">
+				</div>
+			</div>
+		</div>
+	</div>
+    </div>
+    </form>
+</body>
+</html>
